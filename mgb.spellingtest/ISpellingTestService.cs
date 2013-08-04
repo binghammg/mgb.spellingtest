@@ -12,6 +12,6 @@ namespace mgb.spellingtest
     public interface ISpellingTestService
     {
         [OperationContract]
-        void DoWork();
+        Test[] GetTestList(string userName);
     }
 }

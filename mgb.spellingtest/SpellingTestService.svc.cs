@@ -4,15 +4,35 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.Data.Entity;
 
 namespace mgb.spellingtest
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "SpellingTestService" in code, svc and config file together.
-    // NOTE: In order to launch WCF Test Client for testing this service, please select SpellingTestService.svc or SpellingTestService.svc.cs at the Solution Explorer and start debugging.
+    
     public class SpellingTestService : ISpellingTestService
     {
-        public void DoWork()
+        public Test[] GetTestList(string userName)
         {
-        }
+            List<Test> TestList = new List<Test>();
+
+            using (SpellingTestEntities SpellTestDB = new SpellingTestEntities())
+            {
+                
+                /*var testList = (from p in SpellTestDB select p);*/
+
+                /*
+                Test test = new Test()
+                {
+                    Name = ,
+                    Description = 
+                };*/
+
+            }
+
+            
+            return TestList.ToArray();
+
+
+        }        
     }
 }
