@@ -11,28 +11,28 @@ namespace mgb.spellingtest
     
     public class SpellingTestService : ISpellingTestService
     {
+
         public Test[] GetTestList(string userName)
         {
             List<Test> TestList = new List<Test>();
 
             using (SpellingTestEntities SpellTestDB = new SpellingTestEntities())
             {
-                
-                /*var testList = (from p in SpellTestDB select p);*/
+                var tests = (from st in SpellTestDB.Tests select st);
 
-                /*
-                Test test = new Test()
+                foreach (var singleTest in tests)
                 {
-                    Name = ,
-                    Description = 
-                };*/
+                    Test test = new Test()
+                    {
+                        Name = singleTest.Name,
+                        Description = singleTest.Description
+                    };
 
+                    TestList.Add(test);
+                }
             }
-
             
             return TestList.ToArray();
-
-
         }        
     }
 }
