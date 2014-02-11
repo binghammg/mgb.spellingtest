@@ -130,6 +130,8 @@
       <DependentUpon>SpellingTest.edmx</DependentUpon>
       <LastGenOutput>SpellingTest.cs</LastGenOutput>
     </Content>
+    <None Include="Properties\PublishProfiles\IIS.pubxml" />
+    <None Include="Properties\PublishProfiles\SpellingTest.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
